@@ -6,10 +6,4 @@
 # nは自由に変えられるものとして、とりあえず `n=10` で作成する。
 # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-ary = []
-
-10.times do
-  ary.push 0
-end
-
-puts ary
+puts Array.new(10).map{ |item| item = 0 }
