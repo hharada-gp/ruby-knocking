@@ -14,4 +14,4 @@
 #   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 #   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 # ]
-print Array.new(8).map{ |m| m = Array.new(10).map{ |n| n = 0 } }
+print Array.new(8).map{ Array.new(10).map{ 0 } }
