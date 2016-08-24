@@ -5,5 +5,5 @@
 # ------------------------------------------------------------------------------
 # { key1: "value1", key2: "value2", key3: "value3" }
 #   -> { value1: "key1", value2: "key2", value3: "key3" }
-hash = { key1: "value1", key2: "value2", key3: "value3" }.map{ |k, v| k=v, v=k }.to_h
+hash = { key1: "value1", key2: "value2", key3: "value3" }.map{ |k, v| [v, k] }.to_h
 p hash
