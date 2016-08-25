@@ -6,15 +6,15 @@
 # ※例外（存在しないキーへのパスを書いた…など）は考慮しなくても良い。
 # ------------------------------------------------------------------------------
 hash = {
-  "top"=> {
-    "first"=>  1,
-    "second"=> 2,
-    "third"=>  3,
+  top: {
+    first:  1,
+    second: 2,
+    third:  3,
   },
-  "middle"=> {
-    "first"=>  "left",
-    "second"=> "center",
-    "third"=>  "right",
+  middle: {
+    first:  "left",
+    second: "center",
+    third:  "right",
   },
 }
 
@@ -26,7 +26,7 @@ hash = {
 # search_hash(hash, path) #=> "right"
 
 def search_hash(hash, path)
-  split_path = path.split('.')
+  split_path = path.split('.').map(&:to_sym)
   p hash.dig(*split_path)
 end
 
