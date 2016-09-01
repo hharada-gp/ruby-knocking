@@ -8,3 +8,17 @@
 # [1, 1.3, 2.2].sum #=> 4.5
 # [1, 1.3, 2.2].sum #=> 4.5
 # [1, 'a', 2.2].sum #=> 3.2
+
+class Array
+  def sum
+    total = 0
+    self.each do |item|
+      if item.class == Fixnum || item.class == Float
+        total += item
+      end
+    end
+    return total
+  end
+end
+
+p [1,'2',1.1,[]].sum
