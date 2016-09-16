@@ -11,12 +11,8 @@
 
 class Array
   def sum
-    total = 0
-    self.each do |item|
-      if item.class == Fixnum || item.class == Float
-        total += item
-      end
-    end
+    cleanArray = self.select { |item| (item.class == Fixnum || item.class == Float) }
+    total = cleanArray.reduce(:+)
     return total
   end
 end
