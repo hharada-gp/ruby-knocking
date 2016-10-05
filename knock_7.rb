@@ -10,11 +10,19 @@
 # [1, 'a', 2.2].sum #=> 3.2
 
 class Array
+  # def sum
+  #   cleanArray = self.select { |item| (item.class == Fixnum || item.class == Float) }
+  #   total = cleanArray.reduce(:+)
+  #   return total
+  # end
   def sum
-    cleanArray = self.select { |item| (item.class == Fixnum || item.class == Float) }
-    total = cleanArray.reduce(:+)
+    total = 0
+    self.each{|item| if (-Float::INFINITY..Float::INFINITY).include?(item)
+      total += item
+    end
+    }
     return total
   end
 end
 
-p [1,'2',1.1,[]].sum
+p [1,'2',200,[]].sum
