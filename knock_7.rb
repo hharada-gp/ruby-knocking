@@ -11,9 +11,9 @@
 
 class Array
   def sum
-    cleanArray = self.select{|item| (-Float::INFINITY..Float::INFINITY).include?(item)}
-    total = cleanArray.reduce(:+)
-    return total
+    self
+      .select{|item| [Fixnum, Float].include?(item.class)}
+      .reduce(:+)
   end
 end
 
